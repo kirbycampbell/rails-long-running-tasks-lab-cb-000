@@ -24,7 +24,7 @@ class SongsController < ApplicationController
 
   def upload
     CSV.foreach(params[:data].path, headers: true) do |info|
-      Song.create(title: info[0], artist_name: info[1])
+      Song.create(title: info[0])
       Artist.find_or_create_by(name: info[1])
     end
     redirect_to song_path

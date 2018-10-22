@@ -27,7 +27,7 @@ class SongsController < ApplicationController
       Song.create(title: info[0])
       Artist.find_or_create_by(name: info[1])
     end
-    redirect_to song_path
+    redirect_to songs_path
   end
 
   def edit
